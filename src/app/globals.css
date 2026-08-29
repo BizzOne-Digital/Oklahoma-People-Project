@@ -1,0 +1,172 @@
+@import "tailwindcss";
+
+@theme {
+  --color-sunset-orange: #d95f22;
+  --color-warm-amber: #f3a332;
+  --color-prairie-blue: #4b809d;
+  --color-deep-sky-blue: #24566f;
+  --color-warm-cream: #fff8ec;
+  --color-sand: #ead8bf;
+  --color-charcoal: #222629;
+  --color-soft-sage: #78806a;
+  --font-display: var(--font-dm-serif);
+  --font-body: var(--font-manrope);
+}
+
+@layer base {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    overflow-x: clip;
+    width: 100%;
+  }
+
+  html.lenis,
+  html.lenis body {
+    height: auto;
+  }
+
+  body {
+    @apply bg-warm-cream text-charcoal font-body antialiased;
+    overflow-x: clip;
+    width: 100%;
+    margin: 0;
+    min-width: 0;
+  }
+
+  main {
+    overflow-x: clip;
+    width: 100%;
+    min-width: 0;
+  }
+
+  img,
+  video,
+  svg {
+    max-width: 100%;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-display;
+    overflow-wrap: anywhere;
+    word-wrap: break-word;
+  }
+
+  p {
+    overflow-wrap: break-word;
+  }
+
+  ::selection {
+    @apply bg-warm-amber/40 text-charcoal;
+  }
+
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-sunset-orange;
+  }
+}
+
+@layer utilities {
+  .gradient-sunset {
+    background: linear-gradient(
+      135deg,
+      var(--color-deep-sky-blue) 0%,
+      var(--color-prairie-blue) 25%,
+      var(--color-warm-amber) 65%,
+      var(--color-sunset-orange) 100%
+    );
+  }
+
+  .gradient-sunset-soft {
+    background: linear-gradient(
+      180deg,
+      var(--color-warm-cream) 0%,
+      color-mix(in srgb, var(--color-warm-amber) 15%, var(--color-warm-cream)) 50%,
+      color-mix(in srgb, var(--color-prairie-blue) 10%, var(--color-warm-cream)) 100%
+    );
+  }
+
+  .gradient-hero {
+    background: linear-gradient(
+      145deg,
+      var(--color-warm-cream) 0%,
+      color-mix(in srgb, var(--color-sand) 60%, white) 30%,
+      color-mix(in srgb, var(--color-warm-amber) 20%, var(--color-warm-cream)) 60%,
+      color-mix(in srgb, var(--color-prairie-blue) 15%, var(--color-warm-cream)) 100%
+    );
+  }
+
+  .gradient-text {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(
+      135deg,
+      var(--color-deep-sky-blue),
+      var(--color-prairie-blue),
+      var(--color-sunset-orange),
+      var(--color-warm-amber)
+    );
+  }
+
+  .gradient-border {
+    position: relative;
+    background: linear-gradient(var(--color-warm-cream), var(--color-warm-cream)) padding-box,
+      linear-gradient(135deg, var(--color-sunset-orange), var(--color-warm-amber), var(--color-prairie-blue))
+        border-box;
+    border: 2px solid transparent;
+  }
+
+  .glass-warm {
+    background: color-mix(in srgb, var(--color-warm-cream) 85%, white);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+
+  .section-padding {
+    @apply w-full px-4 py-14 sm:px-6 sm:py-20 lg:px-8 lg:py-28;
+  }
+
+  .container-wide {
+    @apply mx-auto w-full min-w-0 max-w-7xl;
+  }
+
+  .page-hero {
+    @apply relative w-full overflow-x-clip pt-24 pb-12 sm:pt-28 sm:pb-16 lg:pt-32 lg:pb-20;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@media print {
+  nav,
+  footer,
+  .no-print {
+    display: none !important;
+  }
+
+  body {
+    background: white;
+    color: black;
+  }
+}
