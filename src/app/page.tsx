@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { createPageMetadata } from "@/lib/metadata";
 import { Hero } from "@/components/sections/Hero";
+import { HomeVideoSection } from "@/components/sections/HomeVideoSection";
 import { ReassuranceMarquee } from "@/components/ui/ReassuranceMarquee";
 import { GradientOrbs, FloatingGrass } from "@/components/ui/DecorativeElements";
 import { SectionHeader } from "@/components/ui/SectionHeader";
@@ -32,6 +33,8 @@ export default function HomePage() {
   return (
     <>
       <Hero />
+
+      <HomeVideoSection />
 
       <section aria-labelledby="reassurance-heading" className="w-full overflow-x-clip">
         <h2 id="reassurance-heading" className="sr-only">

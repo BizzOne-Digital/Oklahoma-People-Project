@@ -15,6 +15,7 @@ export const siteConfig = {
     "Information on this website is provided for general informational purposes and should not be considered legal, financial or tax advice. Outcomes cannot be guaranteed.",
   mission:
     "To help Oklahoma homeowners understand difficult property-tax situations and explore options that may work for them.",
+  homeVideo: "/Ai Avaatar PExport- (2).mp4",
   copyright: `© ${new Date().getFullYear()} Oklahoma People Project. All rights reserved.`,
 } as const;
 

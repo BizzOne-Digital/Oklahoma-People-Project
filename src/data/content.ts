@@ -229,6 +229,11 @@ export const teamSupportCategories = [
 ] as const;
 
 export const homeSectionHeaders = {
+  video: {
+    title: "A Message for Oklahoma Homeowners",
+    subtitle:
+      "Watch a short introduction to learn how our team can help you explore your options with compassion and care.",
+  },
   mission: {
     title: "Our Goal Is to Help Oklahoma Homeowners",
     subtitle:
