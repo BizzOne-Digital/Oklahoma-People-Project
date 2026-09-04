@@ -11,6 +11,14 @@ export const siteConfig = {
   businessHours: "Monday–Friday, 10:00 AM–5:00 PM",
   businessHoursShort: "Mon–Fri, 10 AM–5 PM",
   formEndpoint: process.env.NEXT_PUBLIC_FORM_ENDPOINT || "",
+  externalTracking: {
+    scriptUrl:
+      process.env.NEXT_PUBLIC_LEADCONNECTOR_SCRIPT_URL ||
+      "https://cshbuys.com/js/external-tracking.js",
+    trackingId:
+      process.env.NEXT_PUBLIC_LEADCONNECTOR_TRACKING_ID ||
+      "tk_5fc007f51cc244a889bce9401724a7ba",
+  },
   disclaimer:
     "Information on this website is provided for general informational purposes and should not be considered legal, financial or tax advice. Outcomes cannot be guaranteed.",
   mission:

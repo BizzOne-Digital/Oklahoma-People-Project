@@ -7,6 +7,7 @@ import { Footer } from "@/components/layout/Footer";
 import { SmoothScroll } from "@/components/layout/SmoothScroll";
 import { LoadingScreen } from "@/components/layout/LoadingScreen";
 import { ScrollProgress } from "@/components/layout/ScrollProgress";
+import { LeadConnectorTracking } from "@/components/layout/LeadConnectorTracking";
 import "./globals.css";
 
 const dmSerif = DM_Serif_Display({
@@ -54,6 +55,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           </main>
           <Footer />
         </SmoothScroll>
+        <LeadConnectorTracking />
       </body>
     </html>
   );

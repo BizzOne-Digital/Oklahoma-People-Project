@@ -80,6 +80,8 @@ export function ContactForm() {
 
   return (
     <form
+      id="contact-form"
+      name="contact"
       onSubmit={handleSubmit(onSubmit)}
       className="w-full min-w-0 rounded-3xl border border-sand/50 bg-white/90 p-4 shadow-xl sm:p-6 md:p-8"
       noValidate
@@ -103,7 +105,12 @@ export function ContactForm() {
           <label htmlFor="firstName" className="mb-1.5 block text-sm font-medium text-charcoal">
             First Name <span className="text-sunset-orange">*</span>
           </label>
-          <input id="firstName" {...register("firstName")} className={fieldClass} />
+          <input
+            id="firstName"
+            autoComplete="given-name"
+            {...register("firstName")}
+            className={fieldClass}
+          />
           {errors.firstName && (
             <p className="mt-1 text-xs text-sunset-orange" role="alert">
               {errors.firstName.message}
@@ -115,7 +122,12 @@ export function ContactForm() {
           <label htmlFor="lastName" className="mb-1.5 block text-sm font-medium text-charcoal">
             Last Name <span className="text-sunset-orange">*</span>
           </label>
-          <input id="lastName" {...register("lastName")} className={fieldClass} />
+          <input
+            id="lastName"
+            autoComplete="family-name"
+            {...register("lastName")}
+            className={fieldClass}
+          />
           {errors.lastName && (
             <p className="mt-1 text-xs text-sunset-orange" role="alert">
               {errors.lastName.message}
@@ -127,7 +139,13 @@ export function ContactForm() {
           <label htmlFor="email" className="mb-1.5 block text-sm font-medium text-charcoal">
             Email <span className="text-sunset-orange">*</span>
           </label>
-          <input id="email" type="email" {...register("email")} className={fieldClass} />
+          <input
+            id="email"
+            type="email"
+            autoComplete="email"
+            {...register("email")}
+            className={fieldClass}
+          />
           {errors.email && (
             <p className="mt-1 text-xs text-sunset-orange" role="alert">
               {errors.email.message}
@@ -139,7 +157,13 @@ export function ContactForm() {
           <label htmlFor="phone" className="mb-1.5 block text-sm font-medium text-charcoal">
             Phone <span className="text-sunset-orange">*</span>
           </label>
-          <input id="phone" type="tel" {...register("phone")} className={fieldClass} />
+          <input
+            id="phone"
+            type="tel"
+            autoComplete="tel"
+            {...register("phone")}
+            className={fieldClass}
+          />
           {errors.phone && (
             <p className="mt-1 text-xs text-sunset-orange" role="alert">
               {errors.phone.message}
@@ -151,7 +175,12 @@ export function ContactForm() {
           <label htmlFor="streetAddress" className="mb-1.5 block text-sm font-medium text-charcoal">
             Street Address <span className="text-sunset-orange">*</span>
           </label>
-          <input id="streetAddress" {...register("streetAddress")} className={fieldClass} />
+          <input
+            id="streetAddress"
+            autoComplete="street-address"
+            {...register("streetAddress")}
+            className={fieldClass}
+          />
           {errors.streetAddress && (
             <p className="mt-1 text-xs text-sunset-orange" role="alert">
               {errors.streetAddress.message}
@@ -163,14 +192,19 @@ export function ContactForm() {
           <label htmlFor="addressLine2" className="mb-1.5 block text-sm font-medium text-charcoal">
             Address Line 2
           </label>
-          <input id="addressLine2" {...register("addressLine2")} className={fieldClass} />
+          <input
+            id="addressLine2"
+            autoComplete="address-line2"
+            {...register("addressLine2")}
+            className={fieldClass}
+          />
         </div>
 
         <div>
           <label htmlFor="city" className="mb-1.5 block text-sm font-medium text-charcoal">
             City <span className="text-sunset-orange">*</span>
           </label>
-          <input id="city" {...register("city")} className={fieldClass} />
+          <input id="city" autoComplete="address-level2" {...register("city")} className={fieldClass} />
           {errors.city && (
             <p className="mt-1 text-xs text-sunset-orange" role="alert">
               {errors.city.message}
@@ -182,7 +216,13 @@ export function ContactForm() {
           <label htmlFor="state" className="mb-1.5 block text-sm font-medium text-charcoal">
             State <span className="text-sunset-orange">*</span>
           </label>
-          <input id="state" {...register("state")} className={fieldClass} defaultValue="OK" />
+          <input
+            id="state"
+            autoComplete="address-level1"
+            {...register("state")}
+            className={fieldClass}
+            defaultValue="OK"
+          />
           {errors.state && (
             <p className="mt-1 text-xs text-sunset-orange" role="alert">
               {errors.state.message}
@@ -194,7 +234,12 @@ export function ContactForm() {
           <label htmlFor="zipCode" className="mb-1.5 block text-sm font-medium text-charcoal">
             ZIP Code <span className="text-sunset-orange">*</span>
           </label>
-          <input id="zipCode" {...register("zipCode")} className={fieldClass} />
+          <input
+            id="zipCode"
+            autoComplete="postal-code"
+            {...register("zipCode")}
+            className={fieldClass}
+          />
           {errors.zipCode && (
             <p className="mt-1 text-xs text-sunset-orange" role="alert">
               {errors.zipCode.message}
